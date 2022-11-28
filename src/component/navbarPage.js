@@ -1,7 +1,10 @@
 import React from 'react';
 import '../css/navbar.css';
+import {useState} from 'react';
+import SignUpModal from './modalSignIn';
 
 function NavbarPage(){
+  const [showModal, setModal] = useState(false);
   return(
     <div>        
       <nav className="navbar navbar-expand-lg bg-light">
@@ -35,7 +38,8 @@ function NavbarPage(){
               <i className="fa fa-search" aria-hidden="true"></i>
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
-            <button className="btn btn-outline-success" type="submit" onclick="function()">Sign In</button>
+            <button className="btn btn-outline-success" type="submit" onClick={() => setModal(true)}>Sign In</button>
+            { showModal ? <SignUpModal /> : ' ' }            
           </div>
         </div>
       </nav>      
