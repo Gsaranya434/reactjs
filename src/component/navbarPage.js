@@ -1,9 +1,11 @@
 import React from 'react';
 import '../css/navbar.css';
 import {useState} from 'react';
+import axios from 'axios';
 import SignUpModal from './modalSignIn';
 
-function NavbarPage(){
+
+const NavbarPage = () =>{
   const [showModal, setModal] = useState(false);
   return(
     <div>        
@@ -39,7 +41,7 @@ function NavbarPage(){
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
             <button className="btn btn-outline-success" type="submit" onClick={() => setModal(true)}>Sign In</button>
-            { showModal ? <SignUpModal /> : ' ' }            
+            { showModal ? <SignUpModal data={setModal} /> : ' ' }            
           </div>
         </div>
       </nav>      
