@@ -3,22 +3,50 @@ import React from 'react';
 import {useState,useRef} from 'react';
 import '../css/modalsignin.css';
 import { Row, Modal, Button, Form, Col } from "react-bootstrap";
-
+import { useCookies } from 'react-cookie';
+import axios from "axios";
 
 function SignUpModal(props){
     const [isShow, invokeModal] = useState(true);    
     const initModal = () => {
-        props.data(false);
-      return invokeModal(false)
-
+        setTimeout(
+            ()=>invokeModal(false),
+            100
+            );        
+            return props.data(false);
     }
      const [form,setForm]=useState({
         name:'',
         password:''
      });
-    const signFunc = () => {
-        // return window.
+    const [cookies, setCookie] = useCookies(['user']);
+    const [error, setError] = useState({
+        message:''
+    });
+
+    const signFunc = () => {        
+        if(!form.name || !form.password){
+            setError({message:'Fill the required all filed !.'})
+            form.nameError=true;
+            form.passwordError=true;
+            return true;
+        }else if(!form.name && !form.password){
+            setError({message:'Fill the required all filed !.'})
+            form.nameError=false;
+            form.passwordError=false;
+        }else{
+            setError({message:''});            
+            setCookie('Name', form.name, { path: '/' });
+            setCookie('Password', form.password, { path: '/' });
+            
+            const baseURL = "https://43.204.240.206/login";
+            axios.post(baseURL).then((response) => {
+                debugger
+                console.log(response.data);
+              });
+        }        
     }
+
     const setValue=(e)=>{
         const nextState={
             ...form,
@@ -33,16 +61,15 @@ function SignUpModal(props){
                 </Modal.Header>
                 <Modal.Body>
                 <div className="modal-overlay">
-                    <div className="modal-container">
-                    <Button variant="danger" onClick={initModal}>
-                      Close
-                    </Button>                    
-                    <h2>Sign In</h2>
+                    <div className="modal-container">                    
                     <hr></hr>
                     <input type="text" placeholder='Enter User Name' name='name' value={form.name} onChange={setValue}></input>
-                    <input type='password' placeholder='Enter Password' passowrd='password' value={form.password} onChange={setValue}></input>
+                    <br></br>                    
+                    <input type='password' placeholder='Enter Password' name='password' value={form.password} onChange={setValue}></input>
+                    <p style={{color:"red"}}>{error.message}</p>
+                    <br></br>
                     <button onClick={signFunc}>Sign In</button>
-                    <a href="/files">Sign In</a>                
+                    {/* <a href="/files">Sign In</a> */}
                     {/* <Route path='/files' element=x`x`{<Home/>} /> */}
                     </div>
                 </div>     

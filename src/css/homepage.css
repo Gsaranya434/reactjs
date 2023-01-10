@@ -1,3 +1,8 @@
+
+li{
+    list-style: none;  
+    margin: 30px 50px 20px 40px;
+}
 .newAside{
     max-width:100% !important;
     /* height: 50px;     */
@@ -9,45 +14,122 @@
     overflow-y: auto;
     height: 700px;
     top:50px;
+    background-color: aqua;
 }
 .aside:hover{
-    background: rgb(181, 213, 239);
+    background: rgb(18, 135, 231);
     color: rgb(0, 42, 80);
     transition: all 0.15s ease 0s;
     transform: translateY(-5px);
     box-shadow: rgb(118 177 225) 0px 0px 0px 3px inset, rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
     cursor: pointer;
 }
-.aside{    
-    padding-bottom: 30px;
+.aside{
+    text-align: center;    
     background: rgb(181, 213, 239);
     color: rgb(0, 42, 80);
     transition: all 0.15s ease 0s;
     transform: translateY(-5px);    
     cursor: pointer;
-    border-radius: 10%;
+    border-radius: 15%;
+    padding: 15px 0;
+}
+.mainSec{
+    background-color: rgb(195, 159, 230);
+    text-align: center;   
 }
 
-.secDiv{
-    padding-left: 800px;    
+
+.secDiv{    
+    /* padding-left: 800px;     */
+    margin: auto;
+}
+.fileDiv{
+    padding-left: 300px;
+}
+#Active{
+    background: rgb(18, 135, 231);
+    color: rgb(0, 42, 80);
+    transition: all 0.15s ease 0s;
+    transform: translateY(-5px);
+    box-shadow: rgb(118 177 225) 0px 0px 0px 3px inset, rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+}
+.mainSec{
+    padding:50px 10px 50px 100px;  
+    border-style: solid;
+    text-align: center;
+    /* padding-left: 800px;     */
+    border-radius: 30px;
+    width : 800px;
+    height : 600px;
+    margin: auto;
+    padding:50px 10px 10px 100px;
+    /* margin-left: auto; */
+    margin-right: 200px;
+}
+.mainSec ul{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-left: -60px;
+    margin-right: 30px;
+    padding-right: 15px;
+}
+.first{
+    display: grid;
 }
 .bodydiv{
     background-color: rgb(113, 113, 236);
 }
+.bodydiv tr{
+    border-color: rgb(241, 242, 243);
+    border-width: thin;
+}
+.bodydiv tr td:nth-child(1) {
+    padding-right: 200px;      
+}
 
+.bodydiv tr td:nth-child(3) {
+    padding-left: 100px;      
+}
 .approve{
     background-color: rgb(123, 223, 123);
     text-decoration-color: white;
+    display: flex;    
+    padding: 10px;
 }
+
 .reject{
     background-color: rgb(243, 138, 187);
     text-decoration-color: white;
+    display: flex;    
+    padding: 10px;
 }
+
 .pending{
     background-color: rgb(203, 238, 120);
     text-decoration-color: white;
+    display: flex;    
+    padding: 10px;
 }
+
 .upload{
     background-color: rgb(251, 255, 251);
     text-decoration-color: white;
+    display: flex;    
+    padding: 10px;  
+}
+.fileCnt{
+    margin-left: 350px;
+}
+.rejCnt{
+    margin-left: 358px;
+}
+.penCnt{
+    margin-left: 360px;
+}
+.delCnt{
+    margin-left: 326px;
+}
+.loadCnt{
+    margin-left: 315px;
 }

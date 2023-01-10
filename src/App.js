@@ -41,10 +41,11 @@ function App(){
         <div className="col">
           <Router>          
             <Routes>
+              
                 <Route exact path='/' element={<Navbar />} />
+                <Route path='/dashboard' element={<Home/>} />
                 <Route path='/files' element={<Home/>} />
-                <Route path='/upload' element={<Upload/>} />
-                <Route path='/status' element={<Status/>} />
+                <Route path='/upload' element={<Home/>} />
                 {/* <Route path='/settings' element={<SignUp/>} />
                 <Route path='/bin' element={<SignUp/>} />
                 <Route path='/logout' element={<SignUp/>} /> */}
