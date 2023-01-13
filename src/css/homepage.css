@@ -47,6 +47,13 @@ li{
 .fileDiv{
     padding-left: 300px;
 }
+.uploadDiv{
+    padding-left: 300px;    
+    padding:30px 30px 30px 400px;  
+}
+.reviewDiv{
+    padding-left: 300px;    
+}
 #Active{
     background: rgb(18, 135, 231);
     color: rgb(0, 42, 80);

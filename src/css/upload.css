@@ -1,0 +1,35 @@
+.uploadCls{
+    display: flex;
+    border-style: solid;
+}
+.uploadCls div{
+    padding-right: 150px;
+    margin:20px 0px;   
+}
+
+.uploadBox div{
+    background-color: #c0c4cd;
+    padding: 10px 0px 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+button, input, select, textarea {
+    background-color: transparent;
+    border-style: none;
+}
+
+button, input, optgroup, select, textarea {
+    font: inherit;
+}
+input {
+    border-radius: 0;
+}
+label{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--bs-link-color);
+    padding: 10px 350px 10px 10px;
+}

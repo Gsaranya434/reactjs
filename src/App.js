@@ -46,6 +46,7 @@ function App(){
                 <Route path='/dashboard' element={<Home/>} />
                 <Route path='/files' element={<Home/>} />
                 <Route path='/upload' element={<Home/>} />
+                <Route path='/status' element={<Home/>} />
                 {/* <Route path='/settings' element={<SignUp/>} />
                 <Route path='/bin' element={<SignUp/>} />
                 <Route path='/logout' element={<SignUp/>} /> */}

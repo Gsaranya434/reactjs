@@ -1,0 +1,17 @@
+.reviewCls{
+    display: flex;
+    padding: 50px 50px 50px 50px;
+}
+.selectDiv{
+    padding: 10px 50px 10px 750px;
+    /* padding-left: 700px; */
+    /* padding: 50px; */
+}
+
+/* table, th,tr  {
+    border: 1px solid black;
+  } */
+
+table,tbody,tr:hover{
+    background: rgba(var(--v-border-color),var(--v-hover-opacity));
+}
