@@ -3,12 +3,14 @@ import './App.css';
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
+// import { Redirect } from 'react-router';
 import Home from './component/homePage';
 import Navbar from './component/navbarPage';
 import Upload from './component/uploadFile';
 import Status from './component/statusPage';
 
 function App(){
+  
   return (
     <div className="App">                
       <div className="row"> 
@@ -36,17 +38,20 @@ function App(){
               <a className="nav-link" href="/logout">Logout</a>
             </li>            
           </ul>            
-        </div>     */}
-        
+        </div>     */}        
         <div className="col">
-          <Router>          
-            <Routes>
-              
-                <Route exact path='/' element={<Navbar />} />
-                <Route path='/dashboard' element={<Home/>} />
-                <Route path='/files' element={<Home/>} />
-                <Route path='/upload' element={<Home/>} />
+          <Router>        
+            <Routes>           
+                <Route path='/' element={<Navbar />} />
+                <Route path='/dashboard' element={<Home />} />
+                <Route path="*">
+                  {/* <Redirect to="/dashboard" element={<Home/>} />    */}
+                </Route>             
+                 {/* <Route path='/files' element={<Home replace to="/dashboard" />} /> */}
+                {/*<Route path='/upload' element={<Home/>} />
                 <Route path='/status' element={<Home/>} />
+                <Route path='/setting' element={<Home/>} />
+                <Route path='/bin' element={<Home/>} /> */}
                 {/* <Route path='/settings' element={<SignUp/>} />
                 <Route path='/bin' element={<SignUp/>} />
                 <Route path='/logout' element={<SignUp/>} /> */}

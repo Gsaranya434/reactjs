@@ -16,12 +16,53 @@ li{
     top:50px;
     background-color: aqua;
 }
+.asideIconDiv{
+    max-width:20% !important;
+    /* height: 50px;     */
+    padding: 0px;
+    margin: 0px;    
+    height:100px;    
+    
+    overflow-y: auto;    
+    background-color: aqua;
+    left: 0px;
+    z-index: 1004;
+    transform: translateX(0%);
+    position: fixed;
+    height: calc((100% - 0px) - 0px);
+    top: 0px;
+    bottom: 0px;
+    width: 56px;
+}
+
+.asideIconDiv:hover .newAside {
+    display: block;
+}
+/* .asideIconDiv:hover{
+    display: none;
+} */
+/* .asideIconDiv:not(:hover) .newAside{
+    display: block;
+} */
+
+.newAside{
+    display: none;
+  }
 .aside:hover{
     background: rgb(18, 135, 231);
     color: rgb(0, 42, 80);
     transition: all 0.15s ease 0s;
     transform: translateY(-5px);
     box-shadow: rgb(118 177 225) 0px 0px 0px 3px inset, rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+    cursor: pointer;
+    display: grid;
+}
+.asideIcn:hover{
+    /* background: rgb(18, 135, 231); */
+    color: rgb(0, 42, 80);
+    transition: all 0.15s ease 0s;
+    transform: translateY(-5px);
+    /* box-shadow: rgb(118 177 225) 0px 0px 0px 3px inset, rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px; */
     cursor: pointer;
 }
 .aside{

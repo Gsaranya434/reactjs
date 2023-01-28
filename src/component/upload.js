@@ -1,21 +1,44 @@
 import React from "react";
 import "../css/upload.css";
-import { Table,Form } from 'react-bootstrap';
+import {useState} from 'react';
+import { Table,Form,Button } from 'react-bootstrap';
+import PreviewModalFunc from "./previewModal";
 
 
-function UploadJs(){
+function UploadJs(){    
+    const [submitMd,setSubmitMd]=useState(false);
+    const submitFunc=()=>{
+        setTimeout(
+            () => setSubmitMd(true), 
+            100
+          );
+    }
     return (
         <>
         <div className="uploadCls">
             <div className="flex">
-                <input type="file" placeholder="Select a Adobe illustrator(.ai) file" />
+                <input type="file" placeholder="Select a Adobe illustrator(.ai) file" truncted-length="15" />
+                {/* <div class="wrapper">
+                <div class="fakeuploadbutton">upload</div>
+                    <input id="file" type="file" name="file" />
+                </div> */}
                 <br></br>
-                <button>SUBMIT FOR REVIEW</button>
+                <br></br>
+                <br></br>
+                <div>
+                    <Button varient="outline-primary" onClick={()=>submitFunc()}>SUBMIT FOR REVIEW</Button>
+                </div>
             </div>
+            {submitMd?
+            <div>
+                <PreviewModalFunc data={setSubmitMd} />
+            </div>
+            :''
+            }
             <div className="uploadBox flex">
                 <div className="boxs">
                     <label>Description</label>
-                    <textarea className="grid"></textarea>
+                    <textarea className="grid" rows={5}></textarea>
                 </div>
                 <div className="boxs">
                     <label>Category</label>
@@ -151,15 +174,15 @@ function UploadJs(){
                 
                 <div className="boxs">
                     <label>Custom Tag</label>
-                    <input type="text" placeholder="Custom Tag 1" onClick="" />
+                    <input type="text" placeholder="Custom Tag 1" />
                 </div>
                 <div className="boxs">
                     <label>Custom Tag</label>
-                    <input type="text" placeholder="Custom Tag 2" onClick="" />
+                    <input type="text" placeholder="Custom Tag 2" />
                 </div>
                 <div className="boxs">
                     <label>Custom Tag</label>
-                    <input type="text" placeholder="Custom Tag 3" onClick="" />
+                    <input type="text" placeholder="Custom Tag 3" />
                 </div>
             </div>
         </div>

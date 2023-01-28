@@ -26,6 +26,9 @@ button, input, optgroup, select, textarea {
 input {
     border-radius: 0;
 }
+textarea{    
+    width:100%;
+}
 label{
     font-size: 16px;
     font-weight: 500;

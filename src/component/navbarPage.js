@@ -47,7 +47,7 @@ const NavbarPage = () =>{
             <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
               <i className="fa fa-search" aria-hidden="true"></i>
-              <button className="btn btn-outline-success" type="submit">Search</button>
+              {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
             </form>
             <button className="btn btn-outline-success" type="submit" onClick={()=>setFunc(true)}>Sign In</button>
             { showModal ? <SignUpModal data={setFunc} /> : ' ' }            
